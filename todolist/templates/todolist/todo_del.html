@@ -1,0 +1,9 @@
+{% extends 'todolist/base.html' %}
+
+{% block content %}
+    <form method="POST" class="todo-form">{% csrf_token %}
+        {{ form.as_p }}
+        <p>Delete?</p>		
+        <button type="submit" class="del btn btn-default">Yes</button>
+    </form>
+{% endblock %}

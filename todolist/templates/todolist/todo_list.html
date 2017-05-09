@@ -1,0 +1,13 @@
+{% extends 'todolist/base.html' %}
+
+{% block content %}
+    <p><a href="{% url 'todo_new' %}" id="add_button"><input type="submit" value="Add"/></a></p>
+    <table id="list">	
+    {% for todo in todos %}
+        <tr>
+            <td>{{ todo.text }}</td>
+            <td><a href="{% url 'todo_del' pk=todo.pk %}" id="del_button"><input type="submit" value="Delete"/></a></td>
+        </tr> 
+    {% endfor %}
+    </table>
+{% endblock content %}
